@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>my-tool</title>
+  <meta name="description" content="my-tool — 日々の作業をシンプルにするツール">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f5f6f8;
+      --text: #1a1d23;
+      --muted: #5c6370;
+      --accent: #2f6fed;
+      --accent-text: #ffffff;
+      --border: #e2e5ea;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111318;
+        --surface: #1b1e25;
+        --text: #e8eaee;
+        --muted: #9aa1ad;
+        --accent: #5b8cff;
+        --accent-text: #0b0d12;
+        --border: #2a2e37;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif;
+      line-height: 1.7;
+    }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+    header { border-bottom: 1px solid var(--border); }
+    header .container {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo { font-weight: 700; font-size: 1.15rem; text-decoration: none; color: var(--text); }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: .95rem; }
+    nav a:hover { color: var(--text); }
+
+    .hero { padding: 96px 0 80px; text-align: center; }
+    .hero h1 { font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.25; margin: 0 0 16px; }
+    .hero p { color: var(--muted); font-size: 1.1rem; margin: 0 auto 32px; max-width: 560px; }
+    .btn {
+      display: inline-block; padding: 12px 28px; border-radius: 8px;
+      background: var(--accent); color: var(--accent-text);
+      font-weight: 600; text-decoration: none;
+    }
+    .btn:hover { opacity: .9; }
+    .btn-secondary {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border); margin-left: 8px;
+    }
+
+    .features { padding: 64px 0; background: var(--surface); }
+    .features h2 { text-align: center; margin: 0 0 40px; }
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .cta { padding: 80px 0; text-align: center; }
+    .cta h2 { margin: 0 0 12px; }
+    .cta p { color: var(--muted); margin: 0 0 28px; }
+
+    footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); font-size: .9rem; text-align: center; }
+
+    @media (max-width: 480px) {
+      nav a { margin-left: 12px; }
+      .btn-secondary { margin: 12px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="logo" href="#">my-tool</a>
+      <nav>
+        <a href="#features">特徴</a>
+        <a href="#start">はじめる</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>作業を、もっとシンプルに。</h1>
+        <p>my-tool は、毎日の面倒な作業をすばやく片付けるための軽量ツールです。</p>
+        <a class="btn" href="#start">今すぐはじめる</a>
+        <a class="btn btn-secondary" href="#features">詳しく見る</a>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <h2>特徴</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>⚡ 高速</h3>
+            <p>余計な処理を省き、すぐに結果が得られます。</p>
+          </div>
+          <div class="card">
+            <h3>🧩 シンプル</h3>
+            <p>覚えることは最小限。直感的に使えます。</p>
+          </div>
+          <div class="card">
+            <h3>🔒 安心</h3>
+            <p>データは手元に。外部に送信しません。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="start">
+      <div class="container">
+        <h2>さっそく試してみましょう</h2>
+        <p>数分でセットアップできます。</p>
+        <a class="btn" href="#">ダウンロード</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">&copy; 2026 my-tool</div>
+  </footer>
+</body>
+</html>
